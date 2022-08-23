@@ -17,13 +17,15 @@ jobs:
     name: packer
 
     steps:
+      - run: wget https://raw.githubusercontent.com/actions/runner-images/main/images/linux/ubuntu2204.pkr.hcl
+        
       # validate templates
       - name: Validate Template
         uses: hashicorp/packer-github-actions@master
         with:
           command: validate
           arguments: -syntax-only
-          target: https://raw.githubusercontent.com/actions/runner-images/main/images/linux/ubuntu2204.pkr.hcl
+          target: ubuntu2204.pkr.hcl
 
       # build artifact
       - name: Build Artifact
@@ -31,7 +33,7 @@ jobs:
         with:
           command: build
           arguments: "-color=false -on-error=abort"
-          target: https://raw.githubusercontent.com/actions/runner-images/main/images/linux/ubuntu2204.pkr.hcl
+          target: ubuntu2204.pkr.hcl
           working_directory: infrastructure/packer
         env:
           PACKER_LOG: 1
