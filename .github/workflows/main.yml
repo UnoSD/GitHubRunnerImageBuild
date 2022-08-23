@@ -34,8 +34,5 @@ jobs:
           command: build
           arguments: "-color=false -on-error=abort"
           target: ubuntu2204.pkr.hcl
-          working_directory: infrastructure/packer
         env:
           PACKER_LOG: 1
-          HCP_CLIENT_ID: ${{ secrets.HCP_CLIENT_ID }}
-          HCP_CLIENT_SECRET: ${{ secrets.HCP_CLIENT_SECRET }}
