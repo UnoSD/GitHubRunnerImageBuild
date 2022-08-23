@@ -36,4 +36,5 @@ jobs:
           target: ubuntu2204.pkr.hcl
         env:
           PACKER_LOG: 1
-          PKR_VAR_client_id: ${{ secrets.CLIENT_ID }}
+          ARM_CLIENT_ID: ${{ secrets.CLIENT_ID }}
+          PKR_VAR_client_secret: ${{ secrets.CLIENT_SECRET }}
