@@ -38,3 +38,8 @@ jobs:
           PACKER_LOG: 1
           ARM_CLIENT_ID: ${{ secrets.CLIENT_ID }}
           PKR_VAR_client_secret: ${{ secrets.CLIENT_SECRET }}
+          ARM_CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+          ARM_RESOURCE_GROUP: ${{ secrets.MANAGED_IMAGE_RESOURCE_GROUP_NAME }}
+          ARM_STORAGE_ACCOUNT: ${{ secrets.STORAGE_ACCOUNT }}
+          ARM_SUBSCRIPTION_ID: ${{ secrets.SUBSCRIPTION_ID }}
+          TEMP_RESOURCE_GROUP_NAME: ${{ secrets.RESOURCE_GROUP_NAME }}
