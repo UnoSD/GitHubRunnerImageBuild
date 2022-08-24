@@ -26,7 +26,7 @@ jobs:
           command: validate
           arguments: -syntax-only
           target: ubuntu2204.pkr.hcl
-          working-directory: runner-images/images/linux/
+          working_directory: runner-images/images/linux/
 
       # build artifact
       - name: Build Artifact
@@ -35,7 +35,7 @@ jobs:
           command: build
           arguments: "-color=false -on-error=abort"
           target: ubuntu2204.pkr.hcl
-          working-directory: runner-images/images/linux/
+          working_directory: runner-images/images/linux/
         env:
           PACKER_LOG: 1
           ARM_CLIENT_ID: ${{ secrets.CLIENT_ID }}
