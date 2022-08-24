@@ -46,3 +46,4 @@ jobs:
           ARM_SUBSCRIPTION_ID: ${{ secrets.SUBSCRIPTION_ID }}
           TEMP_RESOURCE_GROUP_NAME: ${{ secrets.RESOURCE_GROUP_NAME }}
           ARM_RESOURCE_LOCATION: West Europe
+          PKR_VAR_build_resource_group_name: ${{ secrets.RESOURCE_GROUP_NAME }}
