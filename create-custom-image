@@ -1,0 +1,11 @@
+#!/bin/bash
+
+CONTENT_LENGTH=$(az storage blob show --account-name <ACCOUNT> -c system -n Microsoft.Compute/Images/images/packer-osDisk.<GUID>.vhd --query properties.contentLength)
+az disk create -n img-githubrunner -g rg-ghrib -l WestEurope --os-type Linux --for-upload --upload-size-bytes $CONTENT_LENGTH --sku standard_lrs
+TARGET=$(az disk grant-access -n img-githubrunner -g rg-ghrib --access-level Write --duration-in-seconds 86400 -o tsv)
+azcopy copy '<URL WITH SAS TOKEN FROM VHD>' "$TARGET" --blob-type PageBlob
+az disk revoke-access -n img-githubrunner -g rg-ghrib
+
+# Better
+
+az image create -g rg-ghrib -n img-githubrunner --os-type Linux --source $VHD_URL_WITH_SAS_TOKEN
