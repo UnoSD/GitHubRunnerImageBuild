@@ -44,6 +44,8 @@ jobs:
           ARM_RESOURCE_GROUP: ${{ secrets.MANAGED_IMAGE_RESOURCE_GROUP_NAME }}
           ARM_STORAGE_ACCOUNT: ${{ secrets.STORAGE_ACCOUNT }}
           ARM_SUBSCRIPTION_ID: ${{ secrets.SUBSCRIPTION_ID }}
-          TEMP_RESOURCE_GROUP_NAME: ${{ secrets.RESOURCE_GROUP_NAME }}
+          # new RG
+          #TEMP_RESOURCE_GROUP_NAME: ${{ secrets.RESOURCE_GROUP_NAME }}
           ARM_RESOURCE_LOCATION: West Europe
+          # existing RG
           PKR_VAR_build_resource_group_name: ${{ secrets.RESOURCE_GROUP_NAME }}
